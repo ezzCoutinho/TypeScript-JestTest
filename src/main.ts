@@ -1,13 +1,3 @@
-/*
-Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem
-depender de abstrações.
-Dependa de abstrações, não de implementações.
-Abstrações não devem depender de detalher. Detalhes devem depender de abstraçõe
-s.
-
-Classes de baixo nívels são classes que executam tarefas (os detalhes)
-Classes de alto nível são classes que gerenciam as classes de baixo nível.
-*/
 import { Messaging } from './services/messaging';
 import { Order } from './classes/order';
 import { Persistency } from './services/persistency';
