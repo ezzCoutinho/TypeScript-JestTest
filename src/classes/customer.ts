@@ -31,10 +31,10 @@ export class EnterpriseCustomer
   tradeName: string;
   cnpj: string;
 
-  constructor(name: string, tradeName: string) {
+  constructor(name: string, tradeName: string, cnpj: string) {
     this.name = name;
     this.tradeName = tradeName;
-    this.cnpj = '';
+    this.cnpj = cnpj;
   }
   getName(): string {
     return this.name;
