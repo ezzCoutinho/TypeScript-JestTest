@@ -1,5 +1,0 @@
-Interface segregation principle (Princípio da Segregação de Inteface) -
-os clientes não devem ser forçados a depender de protocolos(interfaces, types 
-e membros abstratos) que não utilizam
-
-Interfaces corretas e coesas com aquilo que se espera.

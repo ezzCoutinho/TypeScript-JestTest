@@ -1,8 +1,0 @@
-Liskov substitution principle (Príncipio da substituição de Liskov) - Se ϕ(x)
-é uma propriedade demonstrável dos objetos x de tipo T. Então ϕ(y) deve ser
-verdadeiro para objetos y de tipo S onde S é um subtipo de T.
-
-Mais simples: Subtipos precisam ser substituíveis por seus tipos de base
-Mais simples ainda: Se o meu programa espera um Aanimal, algo do tpo Cachorro
-(que herda de animal) deve ser como qualquer outro Animal.
-ter coerência com a relação das superclasses com suas subclasses.
