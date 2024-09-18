@@ -3,16 +3,16 @@ import { Order } from './classes/order';
 import { Persistency } from './services/persistency';
 import { Product } from './classes/product';
 import { ShoppingCart } from './classes/shopping-cart';
-import { TenPercentDiscount } from './classes/discount';
+import { NoDiscount } from './classes/discount';
 import {
   // EnterpriseCustomer,
   IndividualCustomer,
 } from './classes/customer';
 
 // const fiftyPercentDiscount = new FiftyPercentDiscount();
-const tenPercentDiscount = new TenPercentDiscount();
-// const noDiscount = new NoDiscount();
-const shoppingCartLow = new ShoppingCart(tenPercentDiscount);
+// const tenPercentDiscount = new TenPercentDiscount();
+const noDiscount = new NoDiscount();
+const shoppingCart = new ShoppingCart(noDiscount);
 const messaging = new Messaging();
 const persistency = new Persistency();
 const individualCustomer = new IndividualCustomer(
@@ -22,20 +22,20 @@ const individualCustomer = new IndividualCustomer(
 );
 
 const order = new Order(
-  shoppingCartLow,
+  shoppingCart,
   messaging,
   persistency,
   individualCustomer,
 );
 
-shoppingCartLow.addItem(new Product('Macbook air m1', 5300));
-shoppingCartLow.addItem(new Product('Camiseta', 49.9));
-shoppingCartLow.addItem(new Product('Caderno', 9.9));
-shoppingCartLow.addItem(new Product('Caneca', 15.99));
+shoppingCart.addItem(new Product('Macbook air m1', 5300));
+shoppingCart.addItem(new Product('Camiseta', 49.9));
+shoppingCart.addItem(new Product('Caderno', 9.9));
+shoppingCart.addItem(new Product('Caneca', 15.99));
 
-console.log(shoppingCartLow.items);
-console.log(shoppingCartLow.total());
-console.log(shoppingCartLow.totalWithDiscount());
+console.log(shoppingCart.items);
+console.log(shoppingCart.total());
+console.log(shoppingCart.totalWithDiscount());
 console.log(order.orderStatus);
 order.checkout();
 console.log(order.orderStatus);

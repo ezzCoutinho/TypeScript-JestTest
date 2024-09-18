@@ -18,8 +18,8 @@ const createEnterpriseCustomer = (
 
 afterEach(() => jest.clearAllMocks());
 
-describe('should have firstName, lastName and cpf', () => {
-  it('should have no discount', () => {
+describe('should have individualCustomer', () => {
+  it('should have firstName, lastName and cpf', () => {
     const sut = createIndividualCustomer(
       'Luiz',
       'Otávio',
@@ -41,8 +41,8 @@ describe('should have firstName, lastName and cpf', () => {
   });
 });
 
-describe('should have name, tradeName and cnpj', () => {
-  it('should have no discount', () => {
+describe('should have enterpriseCustomerj', () => {
+  it('should have name, tradeName and cnpj', () => {
     const sut = createEnterpriseCustomer('Udemy', 'Pai dos burros', '222');
     expect(sut).toHaveProperty('name', 'Udemy');
     expect(sut).toHaveProperty('tradeName', 'Pai dos burros');

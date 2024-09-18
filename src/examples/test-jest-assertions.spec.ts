@@ -1,9 +1,9 @@
 // toEqual -> para igual Mais usado para Objetos.
 // toBeGreaterThan -> seja maior que
 // toBeLessThan -> seja menor que
-// toBeGreaterThanOrEqual -> maior que ou igual
-// toBeLessThanOrEqual -> menor ou igual
-// toBeCloseTo -> é perto de
+// toBeGreaterThanOrEqual -> maior que ou igual a que
+// toBeLessThanOrEqual -> menor ou igual a que
+// toBeCloseTo -> é perto de números flutuantes.
 // toHaveProperty -> verifica se tem uma propriedade. Recebendo dois elementos
 // ('propriedade', valor)
 

@@ -9,7 +9,7 @@ const createSut = (className: new () => Discount): Discount => {
   return new className();
 };
 
-describe('FiftyPercentDiscount', () => {
+describe('should have discounts', () => {
   afterEach(() => jest.clearAllMocks());
 
   it('should have no discount', () => {
@@ -22,7 +22,7 @@ describe('FiftyPercentDiscount', () => {
     expect(sut.calculate(10)).toBeCloseTo(5);
   });
 
-  it('should have no discount', () => {
+  it('should apply 10% discount on price', () => {
     const sut = createSut(TenPercentDiscount);
     expect(sut.calculate(10)).toBeCloseTo(9);
   });

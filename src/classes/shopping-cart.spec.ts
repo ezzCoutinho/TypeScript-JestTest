@@ -8,7 +8,7 @@ import { CartItemProtocol } from './interfaces/cartItem-protocol';
 
 const createSul = () => {
   const discountMock = createDiscountMock();
-  const sut = new ShoppingCart(createDiscountMock());
+  const sut = new ShoppingCart(discountMock);
   return { sut, discountMock };
 };
 
@@ -38,8 +38,6 @@ const createSutWithProducts = () => {
 };
 
 describe('ShoppingCart', () => {
-  afterEach(() => jest.clearAllMocks());
-
   it('should be an empty cart when no product is added', () => {
     const { sut } = createSul();
     expect(sut.isEmpty()).toBe(true);
@@ -74,5 +72,20 @@ describe('ShoppingCart', () => {
     sut.removeItem(0);
     expect(sut.items.length).toBe(1);
     expect(sut.isEmpty()).toBe(false);
+  });
+
+  it('should call discount.calculate once when totalWithDiscount is called', () => {
+    const { discountMock, sut } = createSutWithProducts();
+    const discountMockSpy = jest.spyOn(discountMock, 'calculate');
+    sut.totalWithDiscount();
+    sut.totalWithDiscount();
+    expect(discountMockSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('should call discount.calculate with totalPrice when totalWithDiscount is called', () => {
+    const { sut, discountMock } = createSutWithProducts();
+    const discountMockSpy = jest.spyOn(discountMock, 'calculate');
+    sut.totalWithDiscount();
+    expect(discountMockSpy).toHaveBeenCalledWith(sut.total());
   });
 });
